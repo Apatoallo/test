@@ -63,8 +63,8 @@ const App: () => Node = () => {
 
     getFavorites()
 
-    AsyncStorage.removeItem('FAVS')
-    AsyncStorage.removeItem('UNWANTED')
+    // AsyncStorage.removeItem('FAVS')
+    // AsyncStorage.removeItem('UNWANTED')
     return () => removeNetInfoSubscription();
     
   }, [isSuggestion])
