@@ -80,21 +80,14 @@ const App: () => Node = () => {
       console.log('is device ofline', isOffline)
 
       const searchList = json.Search
-      // setSearchList(json.Search)
 
       console.log('Unwantedin search',unwanted)
       
-      // console.log('SearchList',searchList);
-      // isOffline && setOfflineStatus(false);
-
-      // console.log('isOffline'isOffline)
       var filteredList = searchList.filter(function(objFromA) {
         return !unwanted.find(function(objFromB) {
           return objFromA.imdbID === objFromB.imdbID
         })
       })
-      
-      // console.log('ccc',filteredList)
      
       setIsSuggestion(filteredList); 
     })
@@ -162,14 +155,10 @@ const App: () => Node = () => {
     }
 
     unwanted.push(obj)
-
-    console.log(unwanted)
-
     saveUnwanted()
   }
 
   const _addToFavorites= (ID, title, poster, year) => {
-    // alert(ID+ title+ poster+ year)
     
     var obj = {
       imdbID: ID,
@@ -203,15 +192,7 @@ const renderItem = ({ item }) => {
         <Text style={styles.year}>Release Date: {item.year}</Text>
         <View style={{flex: 1}}></View>
         <View style={styles.favContainer}>
-          {/* <TouchableOpacity
-            onPress={() => _addToFavorites(item.imdbID, item.Title, item.Poster, item.Year)}
-          >
-            <Image 
-              style={styles.favoritesBtn} 
-              source={Heart}
-            />
-          </TouchableOpacity> */}
-          
+         
         </View>
       </View>
     </View>
